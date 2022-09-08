@@ -8,9 +8,22 @@ using System.Windows.Media;
 
 namespace TimeCalc
 {
+
+    //MVVM -
+    //Model (DB-Entity,
+    //View - XAML - Declarativ Databinding, Commands,
+    //ViewModel - Logik, PropertyChangeed
     internal class MainWindowViewModel: INotifyPropertyChanged
     {
+        public MainWindowViewModel()
+        {
+            _Farben = new List<string>
+            {
+                "Red","Green","Blue"
+            };
 
+            AusgewaehlteFarbe = _Farben[0];
+        }
         public int MaxWertAusGUI { get; set; }
         private DateTime _Startzeit;
 
@@ -62,6 +75,36 @@ namespace TimeCalc
             }
 
         }
+
+        private string _AusgewaehlteFarbe;
+
+        public string AusgewaehlteFarbe
+        {
+            get { return _AusgewaehlteFarbe; }
+            set { _AusgewaehlteFarbe = value; 
+            
+                if (PropertyChanged!=null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("AusgewaehlteFarbe"));
+                }
+            
+            }
+        }
+
+    
+
+        private List<string> _Farben;
+
+        public List<string> Farben
+        {
+            get { 
+                
+                
+                return _Farben; 
+            }
+           
+        }
+
 
         public  double Laufzeit
         {

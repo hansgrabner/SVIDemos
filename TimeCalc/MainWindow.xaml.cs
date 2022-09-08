@@ -60,5 +60,11 @@ namespace TimeCalc
             }
 
         }
+
+        private void neueFarbe_Click(object sender, RoutedEventArgs e)
+        {
+            var dataContext = Application.Current.Properties["MainWindowViewModel"] as MainWindowViewModel;
+            dataContext.Farben.Add("Orange");
+        }
     }
 }

@@ -6,12 +6,23 @@
         xmlns:local="clr-namespace:TimeCalc"
         xmlns:MyControls="clr-namespace:MyControls;assembly=MyControls" x:Class="TimeCalc.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="{Binding AusgewaehlteFarbe}" Height="450" Width="800">
     <StackPanel>
         <TextBlock Text="{Binding Startzeit}" x:Name="AusgabeTextBlock"/>
         <TextBlock Text="{Binding Laufzeit}"/>
         <Button Background="{Binding MyBrush}" Click="Button_Click" Content="Anzeigen"/>
         <TextBox Text="{Binding MaxWertAusGUI}" FontSize="{Binding TextGroesse}"/>
         <MyControls:UserControl1/>
+        <ListBox>
+            <ListBoxItem>
+                A
+            </ListBoxItem>
+            <ListBoxItem>
+                C
+            </ListBoxItem>
+        </ListBox>
+        <!-- One Way ItemsSource (Model zum View, Two-Way  -->
+        <ListBox ItemsSource="{Binding Farben}" SelectedItem="{Binding AusgewaehlteFarbe}"/>
+        <Button Click="neueFarbe_Click">Neue Farbe</Button>
     </StackPanel>
 </Window>
