@@ -1,0 +1,17 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimeCalc"
+        xmlns:MyControls="clr-namespace:MyControls;assembly=MyControls" x:Class="TimeCalc.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <TextBlock Text="{Binding Startzeit}" x:Name="AusgabeTextBlock"/>
+        <TextBlock Text="{Binding Laufzeit}"/>
+        <Button Background="{Binding MyBrush}" Click="Button_Click" Content="Anzeigen"/>
+        <TextBox Text="{Binding MaxWertAusGUI}" FontSize="{Binding TextGroesse}"/>
+        <MyControls:UserControl1/>
+    </StackPanel>
+</Window>
