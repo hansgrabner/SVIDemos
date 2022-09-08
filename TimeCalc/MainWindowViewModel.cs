@@ -39,9 +39,16 @@ namespace TimeCalc
         {
             get {
                 if (Laufzeit < MaxWertAusGUI)
-                    return Brushes.Red;
-                else 
-                    return Brushes.Green;   
+                    if (IsChecked)
+                        return Brushes.Red;
+                    else
+                        return Brushes.Orange;
+                else
+                    if (IsChecked)
+                    return Brushes.Green;
+                else
+                    return Brushes.Blue;
+
 
                  }
             
@@ -63,6 +70,17 @@ namespace TimeCalc
         private  double _Laufzeit;
 
         public  event PropertyChangedEventHandler? PropertyChanged;
+
+        private bool _IsChecked;
+
+        public bool IsChecked
+        {
+            get { return _IsChecked; }
+            set { _IsChecked = value;
+                if (PropertyChanged!=null)
+                PropertyChanged(this, new PropertyChangedEventArgs("IsChecked"));
+            }
+        }
 
         public  void InformGUI()
         {

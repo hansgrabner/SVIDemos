@@ -23,7 +23,7 @@ namespace TimeCalc
             this.Properties["MainWindowViewModel"] = m;
             
             //MessageBox.Show(this.Properties["StartZeit"].ToString());
-            MessageBox.Show(m.Startzeit.ToString());
+          //  MessageBox.Show(m.Startzeit.ToString());
         }
 
         private void Application_Exit(object sender, ExitEventArgs e)

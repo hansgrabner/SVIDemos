@@ -66,5 +66,12 @@ namespace TimeCalc
             var dataContext = Application.Current.Properties["MainWindowViewModel"] as MainWindowViewModel;
             dataContext.Farben.Add("Orange");
         }
+
+        int i = 10;
+        private void RepeatButton_Click(object sender, RoutedEventArgs e)
+        {
+            i++;
+            this.Title = i.ToString();
+        }
     }
 }

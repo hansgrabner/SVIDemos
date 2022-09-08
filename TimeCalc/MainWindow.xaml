@@ -22,7 +22,27 @@
             </ListBoxItem>
         </ListBox>
         <!-- One Way ItemsSource (Model zum View, Two-Way  -->
+        <!--ItemsControl-->
         <ListBox ItemsSource="{Binding Farben}" SelectedItem="{Binding AusgewaehlteFarbe}"/>
         <Button Click="neueFarbe_Click">Neue Farbe</Button>
+        <Expander Header="Bitte aufklappen">
+            <StackPanel>
+        <ToggleButton IsChecked="{Binding IsChecked}">Pressed not Pressed</ToggleButton>
+        <RepeatButton Click="RepeatButton_Click">Repeate</RepeatButton>
+        
+        <TextBlock Text="{Binding IsCheckProp}"/>
+            </StackPanel>
+        </Expander>
+        <StackPanel Background="LightSteelBlue" Orientation ="Vertical">
+            <Label Name="lblInstruction"
+ FontSize="15" Content="Enter Car Information"/>
+            <Label Name="lblMake" Content="Make"/>
+            <TextBox Name="txtMake"/>
+            <Label Name="lblColor" Content="Color"/>
+            <TextBox Name="txtColor"/>
+            <Label Name="lblPetName" Content="Pet Name"/>
+            <TextBox Name="txtPetName"/>
+            <Button Name="btnOK" Width ="80" Content="OK"/>
+        </StackPanel>
     </StackPanel>
 </Window>
