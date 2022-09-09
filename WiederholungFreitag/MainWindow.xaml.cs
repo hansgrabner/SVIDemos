@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,24 @@ namespace WiederholungFreitag
         public MainWindow()
         {
             InitializeComponent();
+            CommandBinding helpBinding = new CommandBinding(ApplicationCommands.Help);
+            helpBinding.CanExecute += CanHelpExecute;
+            helpBinding.Executed += HelpExecuted;
+            CommandBindings.Add(helpBinding);
+            MeineBegruesung = "Hello DL";
+            this.DataContext = this;
+        }
+
+        private void CanHelpExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            // Here, you can set CanExecute to false if you want to prevent the command from 
+           
+
+             e.CanExecute = true;
+        }
+        private void HelpExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("Look, it is not that difficult. Just type something!", "Help!");
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -46,6 +65,33 @@ namespace WiederholungFreitag
             KundenView view = new KundenView();
             view.Show();
         }
+
+        private void OpenCmdCanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = false;
+        }
+        private void SaveCmdCanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = false;
+        }
+        private void OpenCmdExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            // Create an open file dialog box and only show XAML files.
+            var openDlg = new OpenFileDialog { Filter = "Text Files |*.txt" };
+            // Did they click on the OK button?
+            if (true == openDlg.ShowDialog())
+            {
+
+            }
+        }
+
+        public void btnClickMe_Clicked(object sender, RoutedEventArgs e)
+        {
+            // Do something when button is clicked.
+            MessageBox.Show("Clicked the button");
+        }
+
+        public string MeineBegruesung { get; set; }
     }
 
 }

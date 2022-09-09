@@ -25,6 +25,10 @@
             </MenuItem>
             <MenuItem Header="Bearbeiten">
                 <MenuItem Header="Löschen" Click="Delete"/>
+                <MenuItem Command ="ApplicationCommands.Copy"/>
+                <MenuItem Command ="ApplicationCommands.Cut"/>
+                
+                <MenuItem Command ="ApplicationCommands.Paste"/>
             </MenuItem>
         </Menu>
         <!--Attached Property-->
@@ -79,7 +83,22 @@
         </GroupBox>
         <GroupBox Header="Neuer Kunde">
             <StackPanel>
-                <TextBox Text="{Binding ID}"/>
+                <TextBox Text="{Binding ID, ValidatesOnDataErrors=True}">
+                    <Validation.ErrorTemplate>
+                        <ControlTemplate>
+                            <StackPanel>
+                                <AdornedElementPlaceholder x:Name="textBox" />
+                                <ItemsControl ItemsSource="{Binding}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding ErrorContent}" Foreground="Red" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Validation.ErrorTemplate>
+                </TextBox>
                 <TextBox Text="{Binding Vorname}"/>
                 <TextBox Text="{Binding Geschlecht}"/>
                 <Button Click="Button_Click" Content="Add Kunde"/>

@@ -9,7 +9,7 @@ using WiederholungFreitag.Models;
 
 namespace WiederholungFreitag.ViewModels
 {
-    internal class KundenViewModel : INotifyPropertyChanged
+    internal class KundenViewModel : INotifyPropertyChanged, IDataErrorInfo
     {
         public KundenViewModel()
         {
@@ -49,8 +49,41 @@ namespace WiederholungFreitag.ViewModels
 
         }
 
-        public int ID { get; set; }
+        private int _ID;
 
+        public int ID
+        {
+            get { return _ID; }
+            set
+            {
+                _ID = value;
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("ID"));
+                }
+            }
+        }
+
+
+        public string Error => "Fehler";
+
+        public string this[string columnName]
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case nameof(ID):
+                        if (ID < 0)
+                            return "ID muss positiv sein";
+                        else
+                            return String.Empty;
+                        break;
+
+                }
+                return string.Empty;
+            }
+        }
         public string Vorname { get; set; }
 
         public string Geschlecht { get; set; }
