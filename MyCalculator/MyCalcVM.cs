@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -11,10 +12,17 @@ namespace MyCalculator
 {
     internal class MyCalcVM : INotifyPropertyChanged
     {
+        public class Berechnung
+        {
+            public string Ausgabetext { get; set; }
+            public Brush Farbe { get; set; }
 
+            public bool Wissenschaftlich { get; set; }
+        }
         public MyCalcVM()
         {
             _Sichtbarkeit = Visibility.Hidden;
+            BerechnungsHistorie = new ObservableCollection<Berechnung>();
         }
 
         private Visibility _Sichtbarkeit;
@@ -23,6 +31,25 @@ namespace MyCalculator
         {
             get { return _Sichtbarkeit; }
 
+        }
+
+        public ObservableCollection<Berechnung> BerechnungsHistorie { get; set; }
+
+        internal void Calculat(string plusOderMinus)
+        {
+            if (plusOderMinus == "-")
+            {
+                Ergebnis = "1 - 2 = -1";
+                Farbe = Brushes.Red;
+            }
+            else
+            {
+                Ergebnis = "1 + 2 = 3";
+                Farbe = Brushes.Green;
+            }
+            BerechnungsHistorie.Add(new Berechnung() { Ausgabetext=Ergebnis, Farbe = Farbe,Wissenschaftlich = IsWissenschaftlichChecked});
+            RaiseEvent("Ergebnis");
+            RaiseEvent("Farbe");
         }
 
         private bool _IsWissenschaftlichChecked;
@@ -67,20 +94,6 @@ namespace MyCalculator
         public string Ergebnis { get; set; }
 
 
-        internal void Calculat(string plusOderMinus)
-        {
-            if (plusOderMinus=="-")
-            {
-                Ergebnis = "1 - 2 = -1";
-                Farbe = Brushes.Red;
-            }
-            else
-            {
-                Ergebnis = "1 + 2 = 3";
-                Farbe = Brushes.Green;
-            }
-
-            RaiseEvent("Ergebnis");
-        }
+     
     }
 }

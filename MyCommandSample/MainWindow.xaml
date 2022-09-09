@@ -1,0 +1,16 @@
+﻿<Window x:Class="MyCommandSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyCommandSample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <Button x:Name="btnChangeColor" Content="Change Color" Margin="5,0,5,0"
+ Padding="4, 2" Command="{Binding Path=ChangeColorCmd,
+ RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+ CommandParameter="{Binding}"/>
+        <TextBlock Text="{Binding Firstname}"/>
+    </StackPanel>
+</Window>

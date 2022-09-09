@@ -1,0 +1,93 @@
+﻿<Window x:Class="WiederholungFreitag.Views.KundenView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WiederholungFreitag.Converters"
+        mc:Ignorable="d"
+        Title="KundenView" Height="450" Width="800">
+    <Window.Resources>
+        <SolidColorBrush x:Key="blueBrush" Color="Blue"/>
+        <SolidColorBrush x:Key="whiteBrush" Color="White"/>
+        <local:MyBrushConverter x:Key="myBrush"/>
+        <DataTemplate x:Key="MeinPersonenTemplate">          
+            <StackPanel>
+                <TextBlock Text="{Binding ID}"></TextBlock>
+                <TextBlock Text="{Binding Vorname}"></TextBlock>
+                <Image Width="50" Source="{Binding Profilbild}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Datei">
+                <MenuItem Header="Beenden" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Bearbeiten">
+                <MenuItem Header="Löschen" Click="Delete"/>
+            </MenuItem>
+        </Menu>
+        <!--Attached Property-->
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem Background="{StaticResource blueBrush}" Content="{Binding Statusanzeige}"/>
+        </StatusBar>
+
+        <StackPanel Background="{Binding Farbe, Converter={StaticResource myBrush}}" >
+            <TextBox Background="{DynamicResource whiteBrush}">
+                <TextBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="SayHello" Click="SayHello"></MenuItem>
+                        <Separator></Separator>
+                        <MenuItem Header="Demo" Click="Demo"></MenuItem>
+                    </ContextMenu>
+                </TextBox.ContextMenu>
+            </TextBox>
+
+            <ListBox ItemsSource="{Binding Personen}" SelectedIndex="{Binding AusgewaehltePersonIndex, Mode=OneWayToSource }" SelectedItem="{Binding AusgewaehltePerson}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding ID}">                               
+                            </TextBlock>
+                            <TextBlock Text="{Binding Vorname}">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Foreground" Value="Blue"></Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Foreground" Value="Red" />
+                                                <Setter Property="TextDecorations" Value="Underline" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <Image Width="50" Source="{Binding Profilbild}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        <GroupBox Header="Kunde ändern">
+            <StackPanel>
+                <TextBlock Text="{Binding AusgewaehltePerson.ID}"/>
+                <TextBox Text="{Binding AusgewaehltePerson.Vorname}"/>
+                <TextBox Text="{Binding AusgewaehltePerson.Geschlecht}"/>
+                
+            </StackPanel>
+
+        </GroupBox>
+        <GroupBox Header="Neuer Kunde">
+            <StackPanel>
+                <TextBox Text="{Binding ID}"/>
+                <TextBox Text="{Binding Vorname}"/>
+                <TextBox Text="{Binding Geschlecht}"/>
+                <Button Click="Button_Click" Content="Add Kunde"/>
+            </StackPanel>
+
+        </GroupBox>
+
+        <ComboBox ItemsSource="{Binding Personen}" ItemTemplate="{StaticResource MeinPersonenTemplate}"/>
+
+    </DockPanel>
+</Window>
