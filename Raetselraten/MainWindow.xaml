@@ -1,0 +1,29 @@
+﻿<Window x:Class="Raetselraten.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Raetselraten"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem Content="{Binding Statustext}"/>
+        </StatusBar>
+        <StackPanel>
+            <GroupBox Header="Frage">
+                <StackPanel>
+                    <Label Content="Frage"></Label>
+                    <TextBlock Text="{Binding AktuelleAufgabe.Frage}"/>
+                    <RadioButton Content="{Binding AktuelleAufgabe.AntwortA}" IsChecked="{Binding AktuelleAufgabe.AuswahlA}"/>
+                    <RadioButton Content="{Binding AktuelleAufgabe.AntwortB}" IsChecked="{Binding AktuelleAufgabe.AuswahlB}"/>
+                    <Label Content="{Binding AktuelleAufgabe.IsRichtigBeantwortet}"/>
+                </StackPanel>
+
+            </GroupBox>
+            <Button Click="Weiter" IsEnabled="{Binding WeiterEnabled}" >Weiter</Button>
+            <Button Click="Zurueck" IsEnabled="{Binding ZurueckEnabled}">Zurück</Button>
+        </StackPanel>
+    </DockPanel>
+    
+</Window>

@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyValidation", "MyValidatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCommandSample", "MyCommandSample\MyCommandSample.csproj", "{9C90C97B-E3F6-4C00-A42D-5CA1138D2A80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiederholungFreitag", "WiederholungFreitag\WiederholungFreitag.csproj", "{2DDADC6E-1316-4FAA-8A04-2A348233FEB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WiederholungFreitag", "WiederholungFreitag\WiederholungFreitag.csproj", "{2DDADC6E-1316-4FAA-8A04-2A348233FEB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raetselraten", "Raetselraten\Raetselraten.csproj", "{98FA4172-D5B2-48C6-B875-038410EDACF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{2DDADC6E-1316-4FAA-8A04-2A348233FEB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DDADC6E-1316-4FAA-8A04-2A348233FEB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DDADC6E-1316-4FAA-8A04-2A348233FEB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98FA4172-D5B2-48C6-B875-038410EDACF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98FA4172-D5B2-48C6-B875-038410EDACF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98FA4172-D5B2-48C6-B875-038410EDACF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98FA4172-D5B2-48C6-B875-038410EDACF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
