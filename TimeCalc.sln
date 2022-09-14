@@ -23,7 +23,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WiederholungFreitag", "Wied
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raetselraten", "Raetselraten\Raetselraten.csproj", "{98FA4172-D5B2-48C6-B875-038410EDACF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWPFEFCoreSample", "MyWPFEFCoreSample\MyWPFEFCoreSample.csproj", "{D0C649D3-B88D-44B6-814B-9598320E965C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWPFEFCoreSample", "MyWPFEFCoreSample\MyWPFEFCoreSample.csproj", "{D0C649D3-B88D-44B6-814B-9598320E965C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter26Sample", "Chapter26Sample\Chapter26Sample.csproj", "{07BB0F6E-9D84-4BF1-AF74-27114A521E71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter26Transformation", "Chapter26Transformation\Chapter26Transformation.csproj", "{93F0A8BC-8253-47BE-9059-A84B26DAF327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunWithTransformation", "FunWithTransformation\FunWithTransformation.csproj", "{660366ED-7190-430C-9EF1-7E5B7265C0BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter26Visuals", "Chapter26Visuals\Chapter26Visuals.csproj", "{97086818-D0BC-4373-8BDE-4C4FD930E7FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +83,22 @@ Global
 		{D0C649D3-B88D-44B6-814B-9598320E965C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0C649D3-B88D-44B6-814B-9598320E965C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0C649D3-B88D-44B6-814B-9598320E965C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07BB0F6E-9D84-4BF1-AF74-27114A521E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07BB0F6E-9D84-4BF1-AF74-27114A521E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07BB0F6E-9D84-4BF1-AF74-27114A521E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07BB0F6E-9D84-4BF1-AF74-27114A521E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93F0A8BC-8253-47BE-9059-A84B26DAF327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93F0A8BC-8253-47BE-9059-A84B26DAF327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93F0A8BC-8253-47BE-9059-A84B26DAF327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93F0A8BC-8253-47BE-9059-A84B26DAF327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{660366ED-7190-430C-9EF1-7E5B7265C0BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{660366ED-7190-430C-9EF1-7E5B7265C0BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{660366ED-7190-430C-9EF1-7E5B7265C0BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{660366ED-7190-430C-9EF1-7E5B7265C0BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97086818-D0BC-4373-8BDE-4C4FD930E7FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97086818-D0BC-4373-8BDE-4C4FD930E7FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97086818-D0BC-4373-8BDE-4C4FD930E7FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97086818-D0BC-4373-8BDE-4C4FD930E7FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
