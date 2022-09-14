@@ -21,14 +21,8 @@ namespace Raetselraten
         }
         public bool CanExecute(object parameter)
         {
-            if (_canexecuteMethod != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            var canExecute = _canexecuteMethod(parameter);
+            return canExecute;
         }
       
     public void Execute(object parameter)

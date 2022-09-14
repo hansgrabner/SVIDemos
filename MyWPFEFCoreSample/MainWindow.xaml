@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:MyWPFEFCoreSample"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <StackPanel>
+        <ListBox ItemsSource="{Binding Categories}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox Text="{Binding NeueKategorie}"/>
+        <Button Click="Button_Click">Neue Kategorie hinzufügen</Button>
+    </StackPanel>
 </Window>

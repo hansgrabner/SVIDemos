@@ -21,11 +21,22 @@ namespace MyWPFEFCoreSample
     /// </summary>
     public partial class MainWindow : Window
     {
+        ProductsViewModel vm = null;
         public MainWindow()
         {
             InitializeComponent();
+            /*
             ProductContext ctx = new ProductContext();
             ctx.Categories.Add(new Category() { CategoryId = 1, Name = "Cat 1" });
+            ctx.Categories.Add(new Category() { CategoryId = 2, Name = "Cat 2" });
+            this.DataContext = ctx.Categories.ToList();*/
+           vm=new ProductsViewModel();
+            this.DataContext = vm;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            vm.AddCategory();
         }
     }
 }

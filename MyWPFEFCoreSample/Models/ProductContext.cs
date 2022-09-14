@@ -10,6 +10,10 @@ namespace MyWPFEFCoreSample.Models
     //https://docs.microsoft.com/en-us/ef/core/get-started/wpf
     public class ProductContext : DbContext
     {
+        public ProductContext()
+        {
+            Database.EnsureCreated();
+        }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
 
@@ -19,6 +23,7 @@ namespace MyWPFEFCoreSample.Models
             
             optionsBuilder.UseSqlite(
                 "Data Source=products.db");
+          
            // optionsBuilder.UseLazyLoadingProxies();
             
         }

@@ -17,7 +17,7 @@ namespace Raetselraten.ViewModels
 
         private bool CanExecuteMyMethod(object parameter)
         {   
-                    return false;
+                    return WeiterEnabled;
             
         }
         private void ExecuteMyMethod(object parameter)

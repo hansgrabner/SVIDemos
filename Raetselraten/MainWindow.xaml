@@ -23,7 +23,7 @@
             </GroupBox>
             <Button Click="Weiter" IsEnabled="{Binding WeiterEnabled}" >Weiter</Button>
             <Button Click="Zurueck" IsEnabled="{Binding ZurueckEnabled}">Zurück</Button>
-            <Button Width="90" Margin="10" Content="Click Me" Command="{Binding MyCommand }"  CommandParameter="{Binding}"></Button>
+            <Button Width="90" Margin="10" Content="Click Me" CommandParameter="{Binding}" Command="{Binding MyCommand }"  ></Button>
         </StackPanel>
     </DockPanel>
     
