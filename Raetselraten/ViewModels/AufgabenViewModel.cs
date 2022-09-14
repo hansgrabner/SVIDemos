@@ -6,11 +6,25 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace Raetselraten.ViewModels
 {
     internal class AufgabenViewModel: INotifyPropertyChanged
     {
+        public ICommand MyCommand { get; set; }
+
+        private bool CanExecuteMyMethod(object parameter)
+        {   
+                    return false;
+            
+        }
+        private void ExecuteMyMethod(object parameter)
+        {
+            MessageBox.Show("Hello... " + Statustext);
+        }
+
         public AufgabenViewModel()
         {
             var a1 = new Aufgabe() { Frage = "Hauptsdat von Österreich", AntwortA = "Wien", AntwortB = "DL", RichtigeAntwort = "A", AuswahlA = false, AuswahlB = false };
@@ -22,6 +36,8 @@ namespace Raetselraten.ViewModels
             Aufgaben.Add(a2);
             Aufgaben.Add(a3);
             AktuelleAufgabeIndex = 0;
+            MyCommand = new MyCommand(ExecuteMyMethod,
+    CanExecuteMyMethod);
         }
         public ObservableCollection<Aufgabe>    Aufgaben{ get; set; }
         private Aufgabe  _AktuelleAufgabe;
